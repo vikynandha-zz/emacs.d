@@ -8,7 +8,6 @@
                           autopair
                           bash-completion
                           bitlbee
-                          bundler
                           buster-mode
                           buster-snippets
                           centered-cursor-mode
@@ -48,7 +47,6 @@
                           handlebars-mode
                           haskell-mode
                           httpcode
-                          inf-ruby
                           inflections
                           jade-mode
                           js2-mode
@@ -68,12 +66,6 @@
                           paredit
                           pcache
                           rainbow-mode
-                          rinari
-                          ruby-compilation
-                          ruby-mode
-                          ruby-test-mode
-                          ruby-tools
-                          rvm
                           slime
                           smex
                           solarized-theme
