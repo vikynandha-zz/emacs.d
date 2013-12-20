@@ -156,6 +156,8 @@
 (add-to-list 'auto-mode-alist '("\\.txt\\'" . org-mode))
 (add-to-list 'auto-mode-alist '("mutt-.*-" . mail-mode))
 (add-to-list 'auto-mode-alist '("nginx.conf" . nginx-mode))
+(add-to-list 'auto-mode-alist '("/nginx/sites-enabled/" . nginx-mode))
+(add-to-list 'auto-mode-alist '("/nginx/sites-available/" . nginx-mode))
 
 ;; ------------------
 ;; Custom keybindings
