@@ -420,6 +420,10 @@
 (add-hook 'text-mode-hook 'auto-fill-mode)
 (add-hook 'text-mode-hook 'flyspell-mode)
 
+;; sgml-mode
+(defun turn-off-flyspell () (flyspell-mode 0))
+(add-hook 'sgml-mode-hook 'turn-off-flyspell)
+
 ;; tramp-mode
 (setq tramp-default-host "localhost"
 	  tramp-default-method "ssh")
