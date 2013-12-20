@@ -332,13 +332,17 @@
 			  js2-concat-multiline-strings t
 			  js2-global-externs (quote
 								  ("module" "require"
-								   "jQuery" "$"
-								   "_" "buster"
-								   "sinon" "assert"
 								   "setTimeout" "clearTimeout"
 								   "setInterval" "clearInterval"
-								   "location" "__dirname"
-								   "console" "JSON"))
+								   "location" "console" "JSON"
+                                   ;; Common libs
+								   "jQuery" "$"
+								   "_" "Backbone"
+                                   ;; recruiterbox global vars
+                                   "RB" "_RB" "Util"
+                                   ;; third-party stuff used in recruiterbox
+                                   "timezoneJS" "mixpanel" "_errs" "google"
+                                   ))
 			  js2-highlight-level 3
 			  js2-include-browser-externs t
 			  js2-include-node-externs t)
