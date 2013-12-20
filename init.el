@@ -49,14 +49,11 @@
 ;; ---------
 (require 'centered-cursor-mode)
 (require 'coffee-mode)
-(require 'guru-mode)
-(require 'hackernews)
 (require 'httpcode)
 (require 'lorem-ipsum)
 (require 'magit)
 (require 'rainbow-mode)
 (require 'remember)
-(require 'rinari)
 (require 'saveplace)
 (require 'server)
 (require 'uniquify)
@@ -175,9 +172,6 @@
 
 ;; eval buffer
 (global-set-key (kbd "C-c e") 'eval-buffer)
-
-;; flyspell
-(global-set-key (kbd "C-c f") 'flyspell-buffer)
 
 ;; powerful counterparts ?
 (global-set-key (kbd "C-s") 'isearch-forward-regexp)
@@ -298,8 +292,8 @@
 (add-hook 'html-mode-hook
 		  (lambda ()
 			"html-mode-hook"
-			(set (make-local-variable 'sgml-basic-offset) 2)
-			(set (make-local-variable 'tab-width) 2)
+			(set (make-local-variable 'sgml-basic-offset) 4)
+			(set (make-local-variable 'tab-width) 4)
 			(define-key html-mode-map (kbd "<M-left>") 'sgml-skip-tag-backward)
 			(define-key html-mode-map (kbd "<M-right>") 'sgml-skip-tag-forward)
 			)
@@ -359,7 +353,6 @@
       magit-process-connection-type nil
       process-connection-type nil)
 (add-hook 'magit-log-edit-mode-hook 'flyspell-mode)
-(add-hook 'magit-mode-hook 'guru-mode)
 
 ;; Python-mode
 (add-hook 'python-mode-hook
@@ -369,19 +362,16 @@
 			(setq python-indent 4)))
 
 ;; prog-mode
-(add-hook 'prog-mode-hook 'flyspell-prog-mode)
-(add-hook 'prog-mode-hook 'guru-mode)
+; (add-hook 'prog-mode-hook 'guru-mode)
+; (add-hook 'prog-mode-hook 'flyspell-prog-mode)
 
 ;; rainbow-mode
 (add-hook 'css-mode-hook 'rainbow-mode)
-(add-hook 'html-mode-hook 'rainbow-mode)
+; (add-hook 'html-mode-hook 'rainbow-mode)
 
 ;; remember-mode
 (define-key global-map (kbd "C-c r") 'remember)
 (define-key global-map (kbd "C-c R") 'remember-region)
-
-;; rinari
-(global-rinari-mode)
 
 ;; root-edit : never save file as root
 (if ( = (user-uid) 0)
@@ -397,9 +387,9 @@
 
 ;; smex-mode
 ;; bind Caps-Lock to smex
-(if (eq window-system 'x)
-    (shell-command "xmodmap -e 'clear Lock' -e 'keycode 66 = F13'"))
-(global-set-key [f13] 'smex)
+; (if (eq window-system 'x)
+;     (shell-command "xmodmap -e 'clear Lock' -e 'keycode 66 = F13'"))
+; (global-set-key [f13] 'smex)
 (global-set-key (kbd "M-x") 'smex)
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
 (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
@@ -439,8 +429,6 @@
 			)
 		  )
 
-;; Real programmers use the real lambda
-(load-file "~/.emacs.d/lambda-fontify.el")
 
 ;; elisp snippets
 (load-file "~/.emacs.d/snippets.el")
