@@ -3,14 +3,15 @@
 ;; -*- lisp -*-
 ;; ~/.emacs.d/init.el
 ;; Jaseem Abid <jaseemabid@gmail.com>
+;; Vignesh Nandha Kumar <viky.nandha@gmail.com>
 ;; ------------------------------------
 
 ;; --------
 ;; Identity
 ;; ---------
-(setq init-file-user "jaseem"
-	  user-full-name "Jaseem Abid"
-	  user-mail-address "jaseemabid@gmail.com")
+(setq init-file-user "viky"
+	  user-full-name "Vignesh Nandha Kumar"
+	  user-mail-address "viky.nandha@gmail.com")
 
 ;; --------------------
 ;; Recompile everything
