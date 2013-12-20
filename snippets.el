@@ -37,6 +37,26 @@
 	(occur (if isearch-regexp isearch-string (regexp-quote isearch-string)))))
 (define-key isearch-mode-map (kbd "C-c o") 'isearch-occur)
 
+;; Compile current buffer (if LESS) to CSS
+(defun compile-less-css ()
+  "Compile LESS to CSS"
+  (async-shell-command (concat "lessc -x " (buffer-file-name) " "
+                               (file-name-directory (directory-file-name (file-name-directory buffer-file-name)))
+                               "css/" (file-name-sans-extension (file-name-nondirectory buffer-file-name)) ".css") nil nil)
+  (delete-other-windows))
+
+(defun compile-tex-pdf ()
+  "Compile Tex/LaTeX files to pdf"
+  (async-shell-command (concat "pdflatex " (buffer-file-name)) nil nil))
+
+(defun compile-buffer ()
+  (interactive)
+  (if (string-match "\.less$" (buffer-file-name))
+            (compile-less-css))
+  (if (string-match "\.tex$" (buffer-file-name))
+      (compile-tex-pdf))
+  (delete-other-windows))
+
 ;; Custom macros
 (fset 'sink
 	  [?R ?~ ?/ ?. ?l ?o ?c ?a ?l ?/ ?s ?h ?a ?r ?e ?/ ?e ?x ?t ?r ?a ?s tab return])

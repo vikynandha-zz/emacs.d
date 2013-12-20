@@ -172,7 +172,6 @@
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
 ;; comment/uncomment block
-(global-set-key (kbd "C-M-f") 'comment-or-uncomment-region)
 (global-set-key (kbd "C-c c") 'comment-or-uncomment-region)
 (global-set-key (kbd "C-c u") 'uncomment-region)
 
@@ -184,6 +183,10 @@
 (global-set-key (kbd "C-r") 'isearch-backward-regexp)
 (global-set-key (kbd "C-M-s") 'isearch-forward)
 (global-set-key (kbd "C-M-r") 'isearch-backward)
+(global-set-key (kbd "C-c s") 'rgrep)
+
+;; Compile LESS to CSS, tex to pdf
+(global-set-key '[f9] 'compile-buffer)
 
 ;; eshell tweaks
 
@@ -271,7 +274,7 @@
 (add-to-list 'desktop-modes-not-to-save 'magit-mode)
 (add-to-list 'desktop-modes-not-to-save 'fundamental-mode)
 (add-to-list 'desktop-modes-not-to-save 'completion-list-mode)
-(define-key global-map (kbd "C-c s") 'desktop-save-in-desktop-dir)
+(define-key global-map (kbd "\C-c\C-s") 'desktop-save-in-desktop-dir)
 
 ;; dired-mode
 (defalias 'ido-list-directory 'dired) ;; list directory is pointless and stupid
@@ -350,14 +353,17 @@
 ;; js2-refactor-mode
 (js2r-add-keybindings-with-prefix "C-c C-r")
 
+(global-set-key (kbd "C-<next>") 'js2-next-error)
+
 ;; line-number-mode
 (global-linum-mode t)
 (global-hl-line-mode t)
 
 ;; magit
-(define-key global-map (kbd "C-c i") 'magit-status)
 (define-key global-map (kbd "C-c g") 'magit-status)
-(define-key global-map (kbd "C-c l") 'magit-log-simple)
+(define-key global-map (kbd "C-c l") 'magit-log)
+(define-key global-map (kbd "C-c c") 'magit-checkout)
+(define-key global-map (kbd "C-c m") 'magit-merge)
 (setq magit-commit-all-when-nothing-staged nil
       magit-revert-item-confirm t
       magit-process-connection-type nil
