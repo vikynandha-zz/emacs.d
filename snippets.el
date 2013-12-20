@@ -56,17 +56,3 @@
   (if (string-match "\.tex$" (buffer-file-name))
       (compile-tex-pdf))
   (delete-other-windows))
-
-;; Custom macros
-(fset 'sink
-	  [?R ?~ ?/ ?. ?l ?o ?c ?a ?l ?/ ?s ?h ?a ?r ?e ?/ ?e ?x ?t ?r ?a ?s tab return])
-
-(fset 'doc
-	  [?R ?~ ?/ ?D ?o ?c ?u ?m tab ?U ?n tab return])
-
-(fset 'dot-link
-	  [S-end ?\M-w ?S ?~ ?/ ?. ?\C-y return])
-
-(fset 'music-add
-	  [S-end ?\M-w ?S ?~ ?/ ?M ?e return ?P ?l ?a return ?\C-y return])
-(global-set-key (kbd "C-c ma") 'music-add)
