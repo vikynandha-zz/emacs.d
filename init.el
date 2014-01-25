@@ -58,7 +58,6 @@
 (require 'saveplace)
 (require 'server)
 (require 'uniquify)
-(require 'yasnippet)
 (require 'zone)
 (require 'web-beautify)
 

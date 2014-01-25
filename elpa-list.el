@@ -74,6 +74,5 @@
                           web-beautify
                           web-mode
                           yaml-mode
-                          yasnippet
                           zencoding-mode)
   "Default packages")
