@@ -62,6 +62,7 @@
 (require 'web-beautify)
 (require 'auto-complete)
 (require 'ac-js2)
+(require 'fill-column-indicator)
 
 ;; -----------------
 ;; General settings
@@ -289,6 +290,10 @@
 
 ;; eshell
 (setq eshell-buffer-maximum-lines 4096)
+
+;; fill column indicator
+(setq fci-rule-width 1)
+(setq fci-rule-color "#2a4d53")
 
 ;; haskell-mode
 (add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
