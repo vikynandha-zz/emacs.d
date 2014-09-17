@@ -305,6 +305,7 @@
 			"html-mode-hook"
 			(set (make-local-variable 'sgml-basic-offset) 4)
 			(set (make-local-variable 'tab-width) 4)
+			(set (make-local-variable 'whitespace-line) 100)
 			(define-key html-mode-map (kbd "<M-left>") 'sgml-skip-tag-backward)
 			(define-key html-mode-map (kbd "<M-right>") 'sgml-skip-tag-forward)
 			)
@@ -324,6 +325,10 @@
 
 ;; js-mode
 (defalias 'js-mode 'js2-mode)
+
+(require 'whitespace)
+(setq whitespace-style '(face empty tabs lines-tail trailing))
+(global-whitespace-mode t)
 
 ;; js2-mode
 (add-hook 'js2-mode-hook
@@ -445,10 +450,7 @@
 
 ;; write file hook
 (add-hook 'write-file-hooks
-		  (lambda ()
-			;; delete \b at line ends before saving a file
-			(delete-trailing-whitespace)
-			)
+		  'delete-trailing-whitespace
 		  )
 
 
