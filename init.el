@@ -60,6 +60,8 @@
 (require 'uniquify)
 (require 'zone)
 (require 'web-beautify)
+(require 'auto-complete)
+(require 'ac-js2)
 
 ;; -----------------
 ;; General settings
@@ -311,6 +313,15 @@
 			)
 		  )
 
+;; jade-mode
+(add-hook 'jade-mode-hook
+		  (lambda ()
+			"jade-mode-hook"
+			(set (make-local-variable 'whitespace-line) 100)
+            (auto-complete-mode)
+			)
+		  )
+
 ;; ido-mode
 (setq ido-enable-flex-matching t
 	  ido-all-frames 'visible
@@ -334,6 +345,7 @@
 (add-hook 'js2-mode-hook
 		  (lambda ()
 			(setq mode-name "JS2")
+            (auto-complete-mode)
 			)
 		  )
 (setq-default js-indent-level 4
@@ -361,6 +373,13 @@
 (js2r-add-keybindings-with-prefix "C-c C-r")
 
 (global-set-key (kbd "C-<next>") 'js2-next-error)
+
+;; less-css-mode
+(add-hook 'less-css-mode-hook
+		  (lambda ()
+            (auto-complete-mode)
+			)
+		  )
 
 ;; line-number-mode
 (global-linum-mode t)
