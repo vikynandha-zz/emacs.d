@@ -113,10 +113,11 @@
 			'(buffer-file-name "%f" (dired-directory dired-directory "%b"))))
 
 ;; Always open maximized
-(x-send-client-message nil 0 nil "_NET_WM_STATE" 32
-                       '(2 "_NET_WM_STATE_MAXIMIZED_VERT" 0))
-(x-send-client-message nil 0 nil "_NET_WM_STATE" 32
-                       '(2 "_NET_WM_STATE_MAXIMIZED_HORZ" 0))
+(when (eq system-type 'gnu/linux)
+  (x-send-client-message nil 0 nil "_NET_WM_STATE" 32
+                         '(2 "_NET_WM_STATE_MAXIMIZED_VERT" 0))
+  (x-send-client-message nil 0 nil "_NET_WM_STATE" 32
+                         '(2 "_NET_WM_STATE_MAXIMIZED_HORZ" 0)))
 
 ;; Color themes
 (load-theme 'solarized-dark t)
