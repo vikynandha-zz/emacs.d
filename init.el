@@ -87,7 +87,6 @@
 			  sentence-end-double-space nil
 			  tab-width 4
 			  transient-mark-mode t
-			  uniquify-buffer-name-style 'forward
 			  vc-follow-symlinks t
 			  visible-bell t)
 
@@ -470,7 +469,8 @@
 (pending-delete-mode t)
 
 ;; uniquify buffers
-(setq uniquify-buffer-name-style 'forward)
+(setq uniquify-buffer-name-style 'forward
+      uniquify-min-dir-content 1)
 
 ;; write file hook
 (add-hook 'write-file-hooks
