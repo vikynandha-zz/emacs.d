@@ -447,6 +447,9 @@
 
 ;; snippets
 (yas-global-mode 1)
+(global-set-key (kbd "M-<RET>") 'yas-expand)
+(global-set-key (kbd "M-<up>") 'yas-prev-field)
+(global-set-key (kbd "M-<down>") 'yas-next-field)
 
 ;; text-mode
 (add-hook 'text-mode-hook 'auto-fill-mode)
@@ -485,3 +488,4 @@
 
 ;; elisp snippets
 (load-file "~/.emacs.d/snippets.el")
+(yas/load-directory "~/.emacs.d/snippets/backbone-underscore-snippets")
