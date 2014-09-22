@@ -294,6 +294,8 @@
 ;; fill column indicator
 (setq fci-rule-width 1)
 (setq fci-rule-color "#2a4d53")
+(define-globalized-minor-mode global-fci-mode fci-mode (lambda () (fci-mode 1)))
+(global-fci-mode 1)
 
 ;; haskell-mode
 (add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
