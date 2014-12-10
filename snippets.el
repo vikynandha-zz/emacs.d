@@ -47,7 +47,7 @@
 
 (defun compile-tex-pdf ()
   "Compile Tex/LaTeX files to pdf"
-  (async-shell-command (concat "pdflatex " (buffer-file-name)) nil nil))
+  (shell-command (concat "pdflatex " (buffer-file-name)) nil nil))
 
 (defun compile-buffer ()
   (interactive)
