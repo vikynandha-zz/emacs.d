@@ -56,3 +56,10 @@
   (if (string-match "\.tex$" (buffer-file-name))
       (compile-tex-pdf))
   (delete-other-windows))
+
+
+(defun insert-file-name ()
+  "Insert the full path file name into the current buffer."
+  (interactive)
+  (insert (file-name-nondirectory buffer-file-name)
+                                  (window-buffer (minibuffer-selected-window))))
