@@ -315,6 +315,7 @@
 			(set (make-local-variable 'sgml-basic-offset) 4)
 			(set (make-local-variable 'tab-width) 4)
 			(set (make-local-variable 'whitespace-line) 100)
+			(set (make-local-variable 'fill-column) 100)
 			(define-key html-mode-map (kbd "<M-left>") 'sgml-skip-tag-backward)
 			(define-key html-mode-map (kbd "<M-right>") 'sgml-skip-tag-forward)
 			)
@@ -325,6 +326,7 @@
 		  (lambda ()
 			"jade-mode-hook"
 			(set (make-local-variable 'whitespace-line) 100)
+			(set (make-local-variable 'fill-column) 100)
             (auto-complete-mode)
 			)
 		  )
