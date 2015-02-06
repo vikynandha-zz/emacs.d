@@ -63,6 +63,8 @@
 (require 'auto-complete)
 (require 'ac-js2)
 (require 'fill-column-indicator)
+(require 'ace-jump-mode)
+(require 'imenu)
 
 ;; -----------------
 ;; General settings
@@ -164,6 +166,11 @@
 ;; ------------------
 ;; Custom keybindings
 ;; ------------------
+
+;; jump around in the buffer
+;; ref: http://youtu.be/UZkpmegySnc
+(global-set-key (kbd "C-M-j") 'ace-jump-mode)
+(global-set-key (kbd "C-/") 'ido-imenu)
 
 ;; buffer switching
 (global-set-key (kbd "C-x <up>") 'windmove-up)

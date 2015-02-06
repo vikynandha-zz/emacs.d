@@ -1,5 +1,6 @@
 (defvar jaseem/packages '(
                           ac-slime
+                          ace-jump-mode
                           apache-mode
                           auctex
                           auto-compile
@@ -48,6 +49,7 @@
                           handlebars-mode
                           haskell-mode
                           httpcode
+                          imenu
                           inflections
                           jade-mode
                           js2-mode
