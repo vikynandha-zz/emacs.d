@@ -65,6 +65,7 @@
 (require 'fill-column-indicator)
 (require 'ace-jump-mode)
 (require 'imenu)
+(require 'expand-region)
 
 ;; -----------------
 ;; General settings
@@ -171,6 +172,9 @@
 ;; ref: http://youtu.be/UZkpmegySnc
 (global-set-key (kbd "C-M-j") 'ace-jump-mode)
 (global-set-key (kbd "C-/") 'ido-imenu)
+
+;; select text effectively
+(global-set-key (kbd "C-< C->") 'er/expand-region)
 
 ;; buffer switching
 (global-set-key (kbd "C-x <up>") 'windmove-up)

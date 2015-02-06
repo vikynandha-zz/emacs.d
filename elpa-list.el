@@ -32,6 +32,7 @@
                           elixir-yasnippets
                           emmet-mode
                           erlang
+                          expand-region
                           fill-column-indicator
                           findr
                           flymake
