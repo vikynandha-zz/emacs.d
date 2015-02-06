@@ -63,6 +63,7 @@
 (require 'auto-complete)
 (require 'ac-js2)
 (require 'fill-column-indicator)
+(require 'dirtree)
 (require 'ace-jump-mode)
 (require 'imenu)
 (require 'expand-region)

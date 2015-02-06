@@ -25,6 +25,7 @@
                           dash
                           desktop
                           dired+
+                          dirtree
                           doc-mode
                           dropdown-list
                           eimp
