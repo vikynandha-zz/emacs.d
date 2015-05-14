@@ -410,6 +410,13 @@
 			  js2-include-browser-externs t
 			  js2-include-node-externs t)
 
+;; JSCS
+(load-file "~/.emacs.d/langfmt.el")
+(load-file "~/.emacs.d/jscs.el")
+(autoload 'jscs-indent-apply "jscs" nil t)
+(autoload 'jscs-fix "jscs" nil t)
+(autoload 'jscs-fix-before-save "jscs" nil t)
+
 ;; js2-refactor-mode
 (js2r-add-keybindings-with-prefix "C-c C-r")
 
