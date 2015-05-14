@@ -438,6 +438,9 @@
       process-connection-type nil)
 (add-hook 'magit-log-edit-mode-hook 'flyspell-mode)
 
+;; Disable Magit's warning about auto-reverting files when emacs is restarted
+(setq magit-last-seen-setup-instructions "1.4.0")
+
 ;; Python-mode
 (add-hook 'python-mode-hook
 		  (lambda ()
