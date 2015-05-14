@@ -360,9 +360,6 @@
 (add-hook 'image-mode-hook 'eimp-mode)
 ;; (add-hook 'eimp-mode-hook 'eimp-fit-image-to-window)
 
-;; js-mode
-(defalias 'js-mode 'js2-mode)
-
 (require 'whitespace)
 (setq whitespace-style '(face empty tabs lines-tail trailing))
 (global-whitespace-mode t)
