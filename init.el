@@ -165,6 +165,7 @@
 (add-to-list 'auto-mode-alist '("nginx.conf" . nginx-mode))
 (add-to-list 'auto-mode-alist '("/nginx/sites-enabled/" . nginx-mode))
 (add-to-list 'auto-mode-alist '("/nginx/sites-available/" . nginx-mode))
+(add-to-list 'auto-mode-alist '(".emacs.d/snippets/" . snippet-mode))
 
 ;; ------------------
 ;; Custom keybindings
@@ -377,6 +378,16 @@
                                             (insert-string "debugger;" )))
 			)
 		  )
+;; js2-mode steals TAB, let's steal it back for yasnippet
+(defun js2-tab-properly ()
+  (interactive)
+  (let ((yas-fallback-behavior 'return-nil))
+    (unless (yas-expand)
+      (indent-for-tab-command)
+      (if (looking-back "^\s*")
+          (back-to-indentation)))))
+
+(define-key js2-mode-map (kbd "TAB") 'js2-tab-properly)
 
 (setq-default js-indent-level 4
 			  js2-allow-keywords-as-property-names t
@@ -514,4 +525,3 @@
 
 ;; elisp snippets
 (load-file "~/.emacs.d/snippets.el")
-(yas/load-directory "~/.emacs.d/snippets/backbone-underscore-snippets")
