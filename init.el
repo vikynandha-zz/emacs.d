@@ -390,7 +390,7 @@
 			  js2-auto-insert-catch-block t
 			  js2-concat-multiline-strings t
 			  js2-global-externs (quote
-								  ("module" "require"
+								  ("module" "require" "define"
 								   "setTimeout" "clearTimeout"
 								   "setInterval" "clearInterval"
 								   "location" "console" "JSON"
@@ -399,8 +399,6 @@
 								   "_" "Backbone"
                                    ;; recruiterbox global vars
                                    "RB" "_RB" "Util"
-                                   ;; third-party stuff used in recruiterbox
-                                   "timezoneJS" "mixpanel" "_errs" "google"
                                    ))
 			  js2-highlight-level 3
 			  js2-include-browser-externs t
