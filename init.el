@@ -189,6 +189,10 @@
 ;; (define-key global-map "\C-x\C-b" 'electric-buffer-list)
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
+;; open files with fuzzy match
+(helm-mode 1)
+(helm-autoresize-mode 1)
+(global-set-key (kbd "C-x f") 'helm-find)
 ;; comment/uncomment block
 (global-set-key (kbd "C-c c") 'comment-or-uncomment-region)
 (global-set-key (kbd "C-c u") 'uncomment-region)
@@ -458,9 +462,8 @@
 ; (if (eq window-system 'x)
 ;     (shell-command "xmodmap -e 'clear Lock' -e 'keycode 66 = F13'"))
 ; (global-set-key [f13] 'smex)
-(global-set-key (kbd "M-x") 'smex)
-(global-set-key (kbd "M-X") 'smex-major-mode-commands)
-(global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
+(global-set-key (kbd "M-x") 'helm-M-x)
+;; (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
 
 ;; snippets
 (yas-global-mode 1)

@@ -50,6 +50,8 @@
                           haml-mode
                           handlebars-mode
                           haskell-mode
+                          helm
+                          helm-git
                           httpcode
                           imenu
                           inflections
