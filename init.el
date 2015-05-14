@@ -304,7 +304,6 @@
 
 ;; emmet-mode
 (add-hook 'sgml-mode-hook 'emmet-mode)
-(add-hook 'css-mode-hook 'emmet-mode)
 
 ;; eshell
 (setq eshell-buffer-maximum-lines 4096)
