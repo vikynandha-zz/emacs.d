@@ -198,9 +198,6 @@
 (global-set-key (kbd "C-c c") 'comment-or-uncomment-region)
 (global-set-key (kbd "C-c u") 'uncomment-region)
 
-;; eval buffer
-(global-set-key (kbd "C-c e") 'eval-buffer)
-
 ;; powerful counterparts ?
 (global-set-key (kbd "C-s") 'isearch-forward-regexp)
 (global-set-key (kbd "C-r") 'isearch-backward-regexp)
@@ -210,6 +207,9 @@
 
 ;; Compile LESS to CSS, tex to pdf
 (global-set-key '[f9] 'compile-buffer)
+
+;; revert buffer
+(global-set-key '[f5] 'revert-buffer)
 
 ;; eshell tweaks
 
@@ -269,7 +269,7 @@
 
 ;; webjump let's you quickly search google, wikipedia, emacs wiki
 (global-set-key (kbd "C-x g") 'webjump)
-(global-set-key (kbd "C-x M-g") 'browse-url-at-point)
+(global-set-key (kbd "C-c C-v") 'browse-url-at-point)
 
 ;; ------------------------
 ;; Mode level customization
