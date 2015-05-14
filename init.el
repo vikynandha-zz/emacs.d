@@ -431,7 +431,13 @@
 		  (lambda ()
 			(setq indent-tabs-mode nil)
 			(setq tab-width 4)
-			(setq python-indent 4)))
+			(setq python-indent 4)
+            (global-set-key
+             (kbd "C-c d") (lambda ()
+                             (interactive)
+                             (insert-string "import ipdb; ipdb.set_trace();" )))
+            )
+          )
 
 ;; prog-mode
 ; (add-hook 'prog-mode-hook 'guru-mode)
